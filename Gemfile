@@ -36,3 +36,5 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+
+gem "bootstrap-sass", "~> 2.1.0.1"
