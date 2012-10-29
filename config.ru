@@ -1,6 +1,6 @@
-use Rack::Static, 
-  :urls => ["/images", "/js", "css"],
-  :root => "public"
+use Rack::Static, :urls => ["/stylesheets", "/images", "/ 
+javascripts", "/crap.html", "//google6c597b2b8599ad99.html"], :root => "site" 
+
 
 run lambda { |env|
   [
