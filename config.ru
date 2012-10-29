@@ -1,5 +1,5 @@
 use Rack::Static, :urls => ["/stylesheets", "/images", "/ 
-javascripts", "/showcase.html", "/about_us.html"], :root => "site" 
+javascripts", "/crap.html", "/google6c597b2b8599ad99.html"], :root => "site" 
 
 use Rack::Static, :urls => [/./], :root => "site" 
 
