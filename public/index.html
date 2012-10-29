@@ -1,241 +1,169 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html>
   <head>
-    <title>Ruby on Rails: Welcome aboard</title>
-    <style type="text/css" media="screen">
-      body {
-        margin: 0;
-        margin-bottom: 25px;
-        padding: 0;
-        background-color: #f0f0f0;
-        font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
-        font-size: 13px;
-        color: #333;
-      }
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>LeaveMeOut - Opt Out of PayPal's New User Agreement.</title>
+    <meta name="description" content="PayPal is changing their user agreement to prevent you from being able to take part in a class action lawsuit. Opt out now and protect your rights."/>
+    <meta property="og:title" content="Protect Your Rights: Opt Out of PayPal's New User Agreement" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="http://www.leavemeout.com" />
+	<meta property="og:image" content="" />
+	<meta property="og:site_name" content="LeaveMeOut.com" />
+	<meta property="fb:admins" content="36801504" />
+	
+    <link rel="stylesheet" type="text/css" href="/assets/home.css">
 
-      h1 {
-        font-size: 28px;
-        color: #000;
-      }
+	<script type="text/javascript" src="//use.typekit.net/mkr6zko.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
-      a  {color: #03c}
-      a:hover {
-        background-color: #03c;
-        color: white;
-        text-decoration: none;
-      }
+    
+	<script type="text/javascript">
+	
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-35934708-1']);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	
+	</script>
 
-
-      #page {
-        background-color: #f0f0f0;
-        width: 750px;
-        margin: 0;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      #content {
-        float: left;
-        background-color: white;
-        border: 3px solid #aaa;
-        border-top: none;
-        padding: 25px;
-        width: 500px;
-      }
-
-      #sidebar {
-        float: right;
-        width: 175px;
-      }
-
-      #footer {
-        clear: both;
-      }
-
-      #header, #about, #getting-started {
-        padding-left: 75px;
-        padding-right: 30px;
-      }
-
-
-      #header {
-        background-image: url("assets/rails.png");
-        background-repeat: no-repeat;
-        background-position: top left;
-        height: 64px;
-      }
-      #header h1, #header h2 {margin: 0}
-      #header h2 {
-        color: #888;
-        font-weight: normal;
-        font-size: 16px;
-      }
-
-
-      #about h3 {
-        margin: 0;
-        margin-bottom: 10px;
-        font-size: 14px;
-      }
-
-      #about-content {
-        background-color: #ffd;
-        border: 1px solid #fc0;
-        margin-left: -55px;
-        margin-right: -10px;
-      }
-      #about-content table {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        font-size: 11px;
-        border-collapse: collapse;
-      }
-      #about-content td {
-        padding: 10px;
-        padding-top: 3px;
-        padding-bottom: 3px;
-      }
-      #about-content td.name  {color: #555}
-      #about-content td.value {color: #000}
-
-      #about-content ul {
-        padding: 0;
-        list-style-type: none;
-      }
-
-      #about-content.failure {
-        background-color: #fcc;
-        border: 1px solid #f00;
-      }
-      #about-content.failure p {
-        margin: 0;
-        padding: 10px;
-      }
-
-
-      #getting-started {
-        border-top: 1px solid #ccc;
-        margin-top: 25px;
-        padding-top: 15px;
-      }
-      #getting-started h1 {
-        margin: 0;
-        font-size: 20px;
-      }
-      #getting-started h2 {
-        margin: 0;
-        font-size: 14px;
-        font-weight: normal;
-        color: #333;
-        margin-bottom: 25px;
-      }
-      #getting-started ol {
-        margin-left: 0;
-        padding-left: 0;
-      }
-      #getting-started li {
-        font-size: 18px;
-        color: #888;
-        margin-bottom: 25px;
-      }
-      #getting-started li h2 {
-        margin: 0;
-        font-weight: normal;
-        font-size: 18px;
-        color: #333;
-      }
-      #getting-started li p {
-        color: #555;
-        font-size: 13px;
-      }
-
-
-      #sidebar ul {
-        margin-left: 0;
-        padding-left: 0;
-      }
-      #sidebar ul h3 {
-        margin-top: 25px;
-        font-size: 16px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #ccc;
-      }
-      #sidebar li {
-        list-style-type: none;
-      }
-      #sidebar ul.links li {
-        margin-bottom: 5px;
-      }
-
-      .filename {
-        font-style: italic;
-      }
-    </style>
-    <script type="text/javascript">
-      function about() {
-        info = document.getElementById('about-content');
-        if (window.XMLHttpRequest)
-          { xhr = new XMLHttpRequest(); }
-        else
-          { xhr = new ActiveXObject("Microsoft.XMLHTTP"); }
-        xhr.open("GET","rails/info/properties",false);
-        xhr.send("");
-        info.innerHTML = xhr.responseText;
-        info.style.display = 'block'
-      }
-    </script>
   </head>
+  
   <body>
-    <div id="page">
-      <div id="sidebar">
-        <ul id="sidebar-items">
-          <li>
-            <h3>Browse the documentation</h3>
-            <ul class="links">
-              <li><a href="http://guides.rubyonrails.org/">Rails Guides</a></li>
-              <li><a href="http://api.rubyonrails.org/">Rails API</a></li>
-              <li><a href="http://www.ruby-doc.org/core/">Ruby core</a></li>
-              <li><a href="http://www.ruby-doc.org/stdlib/">Ruby standard library</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+    <header class="navbar navbar-fixed-top">
+      <nav class="navbar-custom">
+        <div class="container" style="padding-top:8px;">
+          <a href="/"><img class="brand" src="/assets/logo.png"></a>
+<ul class="nav">
+	
+	<li style="position:relative; right:15px; top:8px;"><div class="fb-like" data-href="http://memstash.co" data-send="false" data-layout="button_count" data-width="90" data-show-faces="true"></div></li>
+	<li style="position:relative; top:8px;"><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://memstash.co" data-text="Remember everything with @MemStash, an Evernote for your mind:" data-via="memstash" data-related="sinak">Tweet</a>
+</li>
 
-      <div id="content">
-        <div id="header">
-          <h1>Welcome aboard</h1>
-          <h2>You&rsquo;re riding Ruby on Rails!</h2>
+    <li>
+    <a href="/users/sign_up">SIGN UP</a>
+    </li>
+    <li>
+    <a href="/users/sign_in" id="login">LOGIN</a>  
+    </li>
+</ul>
+
+
         </div>
-
-        <div id="about">
-          <h3><a href="rails/info/properties" onclick="about(); return false">About your application&rsquo;s environment</a></h3>
-          <div id="about-content" style="display: none"></div>
-        </div>
-
-        <div id="getting-started">
-          <h1>Getting started</h1>
-          <h2>Here&rsquo;s how to get rolling:</h2>
-
-          <ol>
-            <li>
-              <h2>Use <code>rails generate</code> to create your models and controllers</h2>
-              <p>To see all available options, run it without parameters.</p>
-            </li>
-
-            <li>
-              <h2>Set up a default route and remove <span class="filename">public/index.html</span></h2>
-              <p>Routes are set up in <span class="filename">config/routes.rb</span>.</p>
-            </li>
-
-            <li>
-              <h2>Create your database</h2>
-              <p>Run <code>rake db:create</code> to create your database. If you're not using SQLite (the default), edit <span class="filename">config/database.yml</span> with your username and password.</p>
-            </li>
-          </ol>
+      </nav>
+    </header>
+    <div id="main" role="main">
+      <div class="background">
+      <div class="container padown">
+        <div class="row" id="paddown">
+          <div class="span8">
+            <h1 id="masthead"> Stop forgetting. Start Remembering.</h1>
+          </div>
+          <div class="span4"><a href="/users/sign_up" style="float:right; margin-right:20px"><img src="/assets/started_button.jpg" alt="get started"></a></div>
         </div>
       </div>
-
-      <div id="footer">&nbsp;</div>
     </div>
-  </body>
+      <div class="container mast">
+          <div class="span6 offset6" style="padding-top:60px">
+            <h1 id="center" style="color:#ffffff; font-weight:300;">Save anything to your memory</h1>
+            <img src="assets/mast.png" style="padding-top:25px" class="centered">
+          </div>
+      </div>
+      <div class="container margdown paddown">
+        <div class="row">
+          <div class="span12" style="margin-bottom:20px;">
+            <h3 style="text-align:center"> HOW MEMSTASH WORKS </h3>
+          </div>
+          <div class="span4">
+            <h4 id="center"> 1. STASH IT</h4>
+            <p class="space"> Highlight anything you want to remember and click the “Stash it” bookmark.</p>
+            <img class="centered" src="assets/stash.png">
+          </div>
+          <div class="span4">
+            <h4 id="center"> 2. GET REMINDERS</h4>
+            <p class="space">We’ll send you three reminders, by email or SMS, at just the right time to ensure you remember.</p>
+            <img class="centered" src="assets/reminder.png">
+
+          </div>
+          <div class="span4">
+            <h4 id="center"> 3. NEVER FORGET</h4>
+            <p class="space"> Whether it’s a name, a fact, a quote or a word, it’ll always be fresh in your memory.</p>
+            <img class="centered" src="assets/neverforget.png">
+          </div>
+        </div>
+
+        <hr class="soften">
+
+        <div class="row">
+          <div class="span12" style="margin-bottom:20px;"> 
+            <h3 style="text-align:center"> START REMEMBERING</h3>
+          </div>
+            <div class="span4">
+              <h4 id="center"> NAMES </h4>
+              <p class="space">Ever forgotten somebody's name? Embarassing right? With Memstash you can be sure that never happens again.</p>
+              <img class="centered" src="assets/friends.png">
+            </div>
+            <div class="span4">
+              <h4 id="center"> WORDS </h4 >
+              <p class="space">Whether you're learning a foreign language or just trying to expand your vocabulary, Memstash has you covered.</p>
+              <img class="centered" src="assets/words.png">
+            </div>
+            <div class="span4">
+              <h4 id="center"> NOTES, QUOTES, AND MORE </h4>
+              <p class="space">Whether it’s remembering notes from class, the name of a movie, or a technical concept, Memstash has your back.</p>
+              <img class="centered" src="assets/quotes.png">
+            </div>
+               <div class="alert alert-success">
+    <a class="close" data-dismiss="alert">&#215;</a>
+    <div id="flash_notice">Signed out successfully.</div>
+  </div>
+
+        </div>        
+      </div>
+</div>
+        <footer>    
+          <div class="navbar" style="margin-left:65px">
+  <div class="container">
+    <div class="span12">
+     <hr class="soften">
+      <a href="/"><img class="brand" src="/assets/footer_logo.png"></a>
+      <ul class="nav">
+        <li>
+          <a href="/">HOME</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+        </footer>
+
+        </div>
+      </div> <!--! end of .container -->
+    </div> <!--! end of #main -->
+  <script type="text/javascript">if (!NREUMQ.f) { NREUMQ.f=function() {
+NREUMQ.push(["load",new Date().getTime()]);
+var e=document.createElement("script");
+e.type="text/javascript";e.async=true;e.src="https://d1ros97qkrwjf5.cloudfront.net/42/eum/rum.js";
+document.body.appendChild(e);
+if(NREUMQ.a)NREUMQ.a();
+};
+NREUMQ.a=window.onload;window.onload=NREUMQ.f;
+};
+NREUMQ.push(["nrfj","beacon-4.newrelic.com","6b00cedf8e",823987,"cgxXEkQJX1UBQk5YDVwGFg9YAlZB",0.0,5,new Date().getTime(),"","","","",""])</script></body>
+  
+    <div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id;
+	js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=173936762642931";
+	fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 </html>
